@@ -4,7 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 from multiapp import MultiApp
-from streamlit_app import home, modelo1, modelo2 , modelo3, modelo4
+from streamlit_app import inicio, modelo1, modelo2 , modelo3, modelo4
 
 app = MultiApp()
 
