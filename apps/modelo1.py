@@ -5,7 +5,7 @@ import venv
 from sklearn.svm import SVR 
 import matplotlib.pyplot as plt 
 import pandas as pd 
-
+import streamlit as st
 # %matplotlib inline
 
 """##Cargas datos
