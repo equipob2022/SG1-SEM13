@@ -3,6 +3,24 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+from multiapp import MultiApp
+from streamlit_app import home, modelo1, modelo2 , modelo3, modelo4
+
+app = MultiApp()
+
+st.markdown("""
+#  Inteligencia de Negocios - Grupo B
+""")
+
+# Add all your application here
+app.add_app("Home", inicio.app)
+app.add_app("Modelo 1", modelo1.app)
+#app.add_app("Modelo 2", modelo2.app)
+app.add_app("Modelo 3", modelo3.app)
+app.add_app("Modelo 4", modelo4.app)
+# The main app
+app.run()
+
 
 """
 # Welcome to Streamlit!
