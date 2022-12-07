@@ -15,7 +15,7 @@ st.markdown("""
 # Add all your application here
 app.add_app("Home", inicio.app)
 app.add_app("Modelo 1", modelo1.app)
-#app.add_app("Modelo 2", modelo2.app)
+app.add_app("Modelo 2", modelo2.app)
 app.add_app("Modelo 3", modelo3.app)
 app.add_app("Modelo 4", modelo4.app)
 # The main app
