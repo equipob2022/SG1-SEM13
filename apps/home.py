@@ -5,6 +5,7 @@ def app():
 
     st.subheader('INTEGRANTES: ')
     
+    
     st.write('Alania Inga, Gustavo Adolfo - 19200279')
     
     st.write('Araujo Santillan, Pedro Angel - 19200066')
