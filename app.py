@@ -10,7 +10,7 @@ st.markdown("""
 """)
 # Add all your application here
 app.add_app("Home", home.app)
-app.add_app("Description", description.py)
+app.add_app("Description", description.app)
 app.add_app("Data", data.app)
 app.add_app("Model", model.app)
 # The main app
