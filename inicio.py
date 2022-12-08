@@ -7,5 +7,5 @@ from modelo1 import my_calc1
 st.subheader("Inicio")
 st.write(my_variable)
 
-st.title(my_calc)
+st.title(my_calc1)
 
