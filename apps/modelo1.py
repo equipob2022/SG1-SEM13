@@ -36,13 +36,14 @@ Modelo sacado de : https://itnext.io/learning-data-science-predict-stock-price-w
 """
 
 # Commented out IPython magic to ensure Python compatibility.
+import streamlit as st
 import numpy as np
 from sklearn.svm import SVR 
 import matplotlib.pyplot as plt 
 import pandas as pd 
 
 # %matplotlib inline
-
+st.title('Modelo 1')
 """##Cargas datos
 
 Los datos de Nintendo Co. serán cargados desde Yahoo Finance
