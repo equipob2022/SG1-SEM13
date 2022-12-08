@@ -8,7 +8,7 @@ def main():
     st.write(my_variable)
     
     submenu = st.sidebar.selectbox("SubMenu",["Inicio","Modelo 1","Modelo 2","Modelo 3","Modelo 4"])
-    if choice == "Inicio":
+    if submenu == "Inicio":
        st.subheader("Inicio")
     
     
