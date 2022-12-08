@@ -4,3 +4,5 @@ scikit-learn==0.23.2
 numpy==1.19.2
 yfinance==0.1.54
 matplotlib==3.5.1
+pandas_datareader==0.10.0
+scikit-learn
