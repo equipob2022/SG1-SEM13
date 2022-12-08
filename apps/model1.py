@@ -9,6 +9,6 @@ import yfinance as yf
 def app():
     st.title('Model 1 - SVR')
     data = yf.download('NTDOY')
-
-    st.write(data)
+    descrip=data.describe()
+    st.write(descrip)
 
