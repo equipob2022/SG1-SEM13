@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import home, data, model, description,SVR # import your app modules here
+from apps import home, model1, model2, model3, model4description,SVR # import your app modules here
 
 app = MultiApp()
 
@@ -9,9 +9,11 @@ st.markdown("""
 
 """)
 # Add all your application here
-app.add_app("Description", description.app)
-app.add_app("Data", data.app)
-app.add_app("Model", model.app)
-app.add_app("SVR", SVR.app)
+app.add_app("Home", home.app)
+app.add_app("Modelo SVR", model1.app)
+app.add_app("Modelo Logistic Regression", model2.app)
+app.add_app("Modelo GRU", model3.app)
+app.add_app("Modelo ARIMA", model4.app)
+
 # The main app
 app.run()
