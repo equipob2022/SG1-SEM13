@@ -1,11 +1,10 @@
 import streamlit as st
 
 def app():
-    st.subheader('Companía Tecnológica Nintendo Co., NTDOY')
+    st.header('Companía Tecnológica Nintendo Co., NTDOY')
 
     st.subheader('INTEGRANTES: ')
-    
-    
+     
     st.write('Alania Inga, Gustavo Adolfo - 19200279')
     
     st.write('Araujo Santillan, Pedro Angel - 19200066')
