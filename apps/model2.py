@@ -37,6 +37,8 @@ def app():
     df['High-Low'] = df.High - df.Low
     df['Target'] = np.where(df['Close'].shift(-1) > df['Close'], 1, 0)
     
+    st.write(df)
+    
     # Modelo SVC
     
     ## Variables predictoras
