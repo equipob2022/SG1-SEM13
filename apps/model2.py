@@ -81,6 +81,13 @@ def app():
     ## Predicción del test
     y_pred = modelo.predict(X_test)
     
+    # Ecuación
+    st.write("Coefficients: " + str(modelo.coef_))
+    st.write("Intercept: " + str(modelo.intercept_))
+    st.subheader('Ecuación de Logistic Regression') 
+    st.write(modelo.coef_)
+    st.write(modelo.intercept_)
+    
     # Señal de predicción 
     
     df['Predicted_Signal'] = modelo.predict(X)
