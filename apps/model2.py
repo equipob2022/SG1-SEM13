@@ -35,6 +35,7 @@ def app():
     # Añadiendo indicadores para el modelo
     df['Open-Close'] = df.Open - df.Close
     df['High-Low'] = df.High - df.Low
+    df['Target'] = np.where(df['Close'].shift(-1) > df['Close'], 1, 0)
     
     # Modelo SVC
     
