@@ -106,9 +106,9 @@ def app():
     st.subheader('Matriz de confusión') 
     st.write(cm)
     
-    cm = pd.DataFrame(classification_report(y_test, y_pred))
+    cr = pd.DataFrame(classification_report(y_test, y_pred))
     st.subheader('Reporte de clasificación') 
-    st.write(cm)
+    st.write(cr)
     
     ## Métricas
     MAE=metrics.mean_absolute_error(y_test, y_pred)
