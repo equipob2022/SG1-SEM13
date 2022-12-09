@@ -34,9 +34,9 @@ def app():
     
     def get_data(df):  
         df['Date']=df['Date'].astype(str)
-        df['date'] = df['date'].str.split('-').str[2]
-        df['date'] = pd.to_numeric(df['date'])
-    return [ df['date'].tolist(), df['close'].tolist() ] 
+        df['Date'] = df['Date'].str.split('-').str[2]
+        df['Date'] = pd.to_numeric(df['Date'])
+    return [ df['Date'].tolist(), df['Close'].tolist() ] 
     
     dates, prices = get_data(df)
     
