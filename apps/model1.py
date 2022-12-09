@@ -30,10 +30,6 @@ def app():
 
 
     st.subheader('Support Vector Regression') 
-    prices_list = df.get_historical_prices('2004-08-18', '2022-01-01')
-
-    df = pd.from_dict(prices_list)
-    df.head()
     
     def get_data(df):  
         data = df.copy()
