@@ -37,8 +37,6 @@ def app():
     df['High-Low'] = df.High - df.Low
     df['Target'] = np.where(df['Close'].shift(-1) > df['Close'], 1, 0)
     
-    st.write(df['Target'])
-    
     # Modelo SVC
     
     ## Variables predictoras
@@ -68,8 +66,22 @@ def app():
     (df['Predicted_Signal'] == 0)]
     choicelist = ['Comprar','Vender']
     df['Decision'] = np.select(conditionlist, choicelist)
-    st.subheader('Predicción de señal de compra o venta') 
+    st.subheader('Señal de compra o venta') 
     st.write(df)
+    
+    # Predicción de señal de compra o venta Original vs Predecido
+    st.subheader('Señal de compra o venta Original vs Predecido') 
+    st.write(df[['Target', 'Predicted_Signal']])
+    
+    # Visualizando 
+    st.subheader('Señal de compra o venta Predecido vs Señal de compra o venta Original')
+    fig4=plt.figure(figsize=(12,6))
+    plt.plot(y_test, 'b', label = 'Original')
+    plt.plot(y_pred, 'r', label= 'Predecido')
+    plt.xlabel('Tiempo')
+    plt.ylabel('Señal de compra o venta')
+    plt.legend()
+    st.pyplot(fig4)
     
     # Evaluación del modelo
     
@@ -78,8 +90,6 @@ def app():
     MAE=metrics.mean_absolute_error(y_test, y_pred)
     MSE=metrics.mean_squared_error(y_test, y_pred)
     RMSE=np.sqrt(metrics.mean_squared_error(y_test, y_pred))
-    
-    st.write(RMSE)
     
     metricas = {
         'metrica' : ['Mean Absolute Error', 'Mean Squared Error', 'Root Mean Squared Error'],
