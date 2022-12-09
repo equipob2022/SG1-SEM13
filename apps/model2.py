@@ -68,16 +68,6 @@ def app():
     st.subheader('Predicción de señal de compra o venta') 
     st.write(df)
     
-    # Visualizando la data 3
-    st.subheader('Predicción de señal de compra o venta predecido vs Predicción de señal de compra o venta Original')
-    fig4=plt.figure(figsize=(12,6))
-    plt.plot(y_test, 'b', label = 'Predicción de señal de compra o venta Original')
-    plt.plot(y_pred, 'r', label= 'Predicción de señal de compra o venta Predecido')
-    plt.xlabel('Tiempo')
-    plt.ylabel('Predicción de señal de compra o venta')
-    plt.legend()
-    st.pyplot(fig4)
-    
     # Evaluación del modelo
     
     st.title('Evaluación del Modelo Logistic Regression')
@@ -92,6 +82,9 @@ def app():
         'metrica' : ['Mean Absolute Error', 'Mean Squared Error', 'Root Mean Squared Error'],
         'valor': [MAE, MSE, RMSE]
     }
+    
+    st.write(metricas)
+    
     metricas = pd.DataFrame(metricas)  
     ### Gráfica de las métricas
     st.subheader('Métricas de rendimiento') 
