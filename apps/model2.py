@@ -66,26 +66,22 @@ def app():
     (df['Predicted_Signal'] == 0)]
     choicelist = ['Comprar','Vender']
     df['Decision'] = np.select(conditionlist, choicelist)
-    st.subheader('Señal de compra o venta') 
+    st.subheader('Predicción de Señal de compra o venta') 
     st.write(df)
     
-    # Predicción de señal de compra o venta Original vs Predecido
+    # Señal de compra o venta Original vs Predecido
     st.subheader('Señal de compra o venta Original vs Predecido') 
     st.write(df[['Target', 'Predicted_Signal']])
-    
-    # Visualizando 
-    st.subheader('Señal de compra o venta Predecido vs Señal de compra o venta Original')
-    fig4=plt.figure(figsize=(12,6))
-    plt.plot(y_test, 'b', label = 'Original')
-    plt.plot(y_pred, 'r', label= 'Predecido')
-    plt.xlabel('Tiempo')
-    plt.ylabel('Señal de compra o venta')
-    plt.legend()
-    st.pyplot(fig4)
+   
     
     # Evaluación del modelo
     
     st.title('Evaluación del Modelo Logistic Regression')
+    ## Matriz de confusión
+    cm = pd.DataFrame(confusion_matrix(y_test, y_pred))
+    st.subheader('Matriz de confusión') 
+    st.write(cm)
+    
     ## Métricas
     MAE=metrics.mean_absolute_error(y_test, y_pred)
     MSE=metrics.mean_squared_error(y_test, y_pred)
@@ -95,8 +91,6 @@ def app():
         'metrica' : ['Mean Absolute Error', 'Mean Squared Error', 'Root Mean Squared Error'],
         'valor': [MAE, MSE, RMSE]
     }
-    
-    st.write(metricas)
     
     metricas = pd.DataFrame(metricas)  
     ### Gráfica de las métricas
