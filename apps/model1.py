@@ -1,17 +1,15 @@
 import streamlit as st
+import pandas as pd
 import numpy as np
-from sklearn.svm import SVR 
-import matplotlib.pyplot as plt 
-import pandas as pd 
-import yfinance as yf
+import matplotlib.pyplot as plt
 import pandas_datareader as datas
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import plotly.express as px
 
-
 def app():
-    st.title('Model 1 - SVR')
+    st.title('Model 2 - Logistic Regression')
+    
     #start = '2004-08-18'
     #end = '2022-01-20'
     start = st.date_input('Start' , value=pd.to_datetime('2004-08-18'))
@@ -21,13 +19,14 @@ def app():
 
     user_input = st.text_input('Introducir cotización bursátil' , 'NTDOY')
 
-    data = data.DataReader(user_input, 'yahoo', start, end)
-
+    df = datas.DataReader(user_input, 'yahoo', start, end)
+    
     # Describiendo los datos
 
     st.subheader('Datos del 2004 al 2022') 
-    st.write(data.describe())
-    
+    st.write(df.describe())
+
+
     st.subheader('Support Vector Regression') 
     
    
