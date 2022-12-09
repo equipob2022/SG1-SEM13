@@ -69,4 +69,4 @@ def app():
     
     return svr_rbf.predict(x)[0], svr_lin.predict(x)[0], svr_poly.predict(x)[0]
     predicted_price = predict_prices(dates, prices, [20])
-    st.write(predicted_price)
+    st.pyplot(predicted_price)
