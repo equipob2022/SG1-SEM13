@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import pandas_datareader as datas
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -102,6 +104,10 @@ def app():
     ## Matriz de confusión
     cm = pd.DataFrame(confusion_matrix(y_test, y_pred))
     st.subheader('Matriz de confusión') 
+    st.write(cm)
+    
+    cm = pd.DataFrame(classification_report(y_test, y_pred))
+    st.subheader('Reporte de clasificación') 
     st.write(cm)
     
     ## Métricas
