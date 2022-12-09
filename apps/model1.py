@@ -34,10 +34,11 @@ def app():
 
     df = pd.DataFrame.from_dict(prices_list)
     df.head()
-   def get_data(df):  
-    data = df.copy()
-    data['date'] = data['date'].str.split('-').str[2]
-    data['date'] = pd.to_numeric(data['date'])
+    
+    def get_data(df):  
+        data = df.copy()
+        data['date'] = data['date'].str.split('-').str[2]
+        data['date'] = pd.to_numeric(data['date'])
     return [ data['date'].tolist(), data['close'].tolist() ] 
     
     dates, prices = get_data(df)
