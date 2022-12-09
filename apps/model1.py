@@ -4,6 +4,10 @@ from sklearn.svm import SVR
 import matplotlib.pyplot as plt 
 import pandas as pd 
 import yfinance as yf
+import pandas_datareader as datas
+from sklearn.linear_model import LogisticRegression
+from sklearn import metrics
+import plotly.express as px
 
 
 def app():
