@@ -8,7 +8,7 @@ from sklearn import metrics
 import plotly.express as px
 
 def app():
-    st.title('Model 2 - Logistic Regression')
+    st.title('Model 1 - SVR')
     
     #start = '2004-08-18'
     #end = '2022-01-20'
