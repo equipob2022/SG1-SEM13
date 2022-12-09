@@ -6,7 +6,6 @@ import pandas_datareader as datas
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import plotly.express as px
-from stockai import Stock
 import datetime
 
 def app():
