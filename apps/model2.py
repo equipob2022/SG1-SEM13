@@ -6,6 +6,7 @@ import pandas_datareader as datas
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import plotly.express as px
+import plotly.graph_objects as go
 
 def app():
     st.title('Model 2 - Logistic Regression')
@@ -32,12 +33,32 @@ def app():
     plt.plot(df.Close)
     st.pyplot(fig)
     
+    # Candlestick chart
+    st.subheader('Gráfico Financiero') 
+    candlestick = go.Candlestick(
+                            x=df.index,
+                            open=df['Open'],
+                            high=df['High'],
+                            low=df['Low'],
+                            close=df['Close']
+                            )
+
+    fig = go.Figure(data=[candlestick])
+
+    fig.update_layout(
+        width=800, height=600,
+        title=user_input,
+        yaxis_title='Precio'
+    )
+    
+    st.plotly_chart(fig)
+    
     # Añadiendo indicadores para el modelo
     df['Open-Close'] = df.Open - df.Close
     df['High-Low'] = df.High - df.Low
     df['Target'] = np.where(df['Close'].shift(-1) > df['Close'], 1, 0)
     
-    # Modelo SVC
+    # Modelo RL
     
     ## Variables predictoras
     X = df[['Open-Close', 'High-Low']]
