@@ -82,11 +82,9 @@ def app():
     y_pred = modelo.predict(X_test)
     
     # Ecuación
+    st.subheader('Ecuación de Logistic Regression') 
     st.write("Coefficients: " + str(modelo.coef_))
     st.write("Intercept: " + str(modelo.intercept_))
-    st.subheader('Ecuación de Logistic Regression') 
-    st.write(modelo.coef_)
-    st.write(modelo.intercept_)
     
     # Señal de predicción 
     
@@ -113,9 +111,12 @@ def app():
     st.subheader('Matriz de confusión') 
     st.write(cm)
     
-    cr = pd.DataFrame(classification_report(y_test, y_pred))
     st.subheader('Reporte de clasificación') 
-    st.write(cr)
+    cr = metrics.classification_report(y_test, y_pred)
+    reporte = pd.DataFrame(cr)
+    st.write(reporte)
+    cp = pd.DataFrame(classification_report(y_test, y_pred))
+    st.write(cp)
     
     ## Métricas
     MAE=metrics.mean_absolute_error(y_test, y_pred)
