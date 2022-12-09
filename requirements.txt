@@ -7,3 +7,4 @@ matplotlib==3.5.1
 pandas_datareader==0.10.0
 scikit-learn
 plotly
+stockai
