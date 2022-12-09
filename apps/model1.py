@@ -21,12 +21,12 @@ def app():
 
     user_input = st.text_input('Introducir cotización bursátil' , 'NTDOY')
 
-    df = df.DataReader(user_input, 'yahoo', start, end)
+    data = data.DataReader(user_input, 'yahoo', start, end)
 
     # Describiendo los datos
 
     st.subheader('Datos del 2004 al 2022') 
-    st.write(df.describe())
+    st.write(data.describe())
     
     st.subheader('Support Vector Regression') 
     
