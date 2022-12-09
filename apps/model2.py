@@ -23,8 +23,9 @@ def app():
     df = datas.DataReader(user_input, 'yahoo', start, end)
     
     # Describiendo los datos
-
     st.subheader('Datos del 2004 al 2022') 
+    st.write(df)
+    st.subheader('Descripción de la dataset') 
     st.write(df.describe())
 
     #Visualizaciones 
