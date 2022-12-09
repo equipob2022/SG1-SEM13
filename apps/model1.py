@@ -6,6 +6,7 @@ import pandas_datareader as datas
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import plotly.express as px
+from stockai import Stock
 
 def app():
     st.title('Model 1 - SVR')
@@ -29,5 +30,16 @@ def app():
 
 
     st.subheader('Support Vector Regression') 
+    prices_list = df.get_historical_prices('2004-08-18', '2022-01-01')
+
+    df = pd.DataFrame.from_dict(prices_list)
+    df.head()
+   def get_data(df):  
+    data = df.copy()
+    data['date'] = data['date'].str.split('-').str[2]
+    data['date'] = pd.to_numeric(data['date'])
+    return [ data['date'].tolist(), data['close'].tolist() ] 
     
-   
+    dates, prices = get_data(df)
+    
+    st.write(dates, prices)
