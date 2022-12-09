@@ -21,7 +21,7 @@ def app():
 
     user_input = st.text_input('Introducir cotización bursátil' , 'NTDOY')
 
-    df = datas.DataReader(user_input, 'yahoo', start, end)
+    df = df.DataReader(user_input, 'yahoo', start, end)
 
     # Describiendo los datos
 
@@ -29,13 +29,13 @@ def app():
     st.write(df.describe())
     
     st.subheader('Support Vector Regression') 
-    data = df.reset_index()
+    df = df.reset_index()
     n = 6532
   
-    data.drop(data.head(n).index, inplace = True) 
-    data = data.reset_index()
+    df.drop(data.head(n).index, inplace = True) 
+    df = data.reset_index()
     import datetime
-    def get_data(data):  
+    def get_data(df):  
     df['Date']=df['Date'].astype(str)
     df['Date'] = df['Date'].str.split('-').str[2]
     df['Date'] = pd.to_numeric(df['Date'])
