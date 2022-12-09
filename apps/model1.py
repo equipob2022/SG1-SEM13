@@ -36,7 +36,6 @@ def app():
     data = data.reset_index()
     import datetime
     def get_data(data):  
-    df = data.copy()
     df['Date']=df['Date'].astype(str)
     df['Date'] = df['Date'].str.split('-').str[2]
     df['Date'] = pd.to_numeric(df['Date'])
