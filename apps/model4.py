@@ -75,7 +75,7 @@ def app():
                                     seasonal_order=(1, 1, 2, 12))
     model=model.fit()
 
-    
+    predictions = model.predict(len(df), len(df)+10)
     fig, x = plt.subplots(1,1, figsize=(15, 10))
 
     x.plot(df["Close"], 'y', alpha=0.7,label="Training Data")
@@ -85,14 +85,14 @@ def app():
     st.write('Por lo tanto, considerando un p,d, q = 1,1,2 observamos que el modelo ARIMA genera adecuadas predicciones en el precio de valores para esta data.')
     st.subheader('Gráfico del diagnóstico general aplicando el modelo ARIMA')
     
-    predictions = model.predict(len(df), len(df)+10)
-    figura2 = model.plot_diagnostics(figsize=(15,8))
-    st.pyplot(figura2)
+    
+    #figura2 = model.plot_diagnostics(figsize=(15,8))
+    #st.pyplot(figura2)
 
-    st.write('Arriba a la izquierda:Los errores residuales parecen fluctuar alrededor de una media de cero y tienen una varianza uniforme.')
-    st.write('Arriba a la derecha: La gráfica de densidad sugiere una distribución normal con media cero.')
-    st.write('Abajo a la izquierda: Todos los puntos deben estar perfectamente alineados con la línea roja, cualquier desviación significativa implicaría que la distribución está sesgada.')
-    st.write('Abajo a la derecha: El correlograma, tambien conocido como gráfico ACF, muestra que los errores residuales no estan autocorrelacionados. Cualquier autocorrelación implicaría que existe algún patrón en los errores residuales que no se explican en el modelo. Por lo tanto, deberá busca más X (predictores en el modelo).')
+    #st.write('Arriba a la izquierda:Los errores residuales parecen fluctuar alrededor de una media de cero y tienen una varianza uniforme.')
+    #st.write('Arriba a la derecha: La gráfica de densidad sugiere una distribución normal con media cero.')
+    #st.write('Abajo a la izquierda: Todos los puntos deben estar perfectamente alineados con la línea roja, cualquier desviación significativa implicaría que la distribución está sesgada.')
+    #st.write('Abajo a la derecha: El correlograma, tambien conocido como gráfico ACF, muestra que los errores residuales no estan autocorrelacionados. Cualquier autocorrelación implicaría que existe algún patrón en los errores residuales que no se explican en el modelo. Por lo tanto, deberá busca más X (predictores en el modelo).')
     
     
 
