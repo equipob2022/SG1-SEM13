@@ -14,9 +14,9 @@ import datetime
 def app():
     st.title('Model 1 - SVR')
     
-    #start = '2012-08-18'
+    #start = '2019-08-18'
     #end = '2022-01-20'
-    start = st.date_input('Start' , value=pd.to_datetime('2012-08-18'))
+    start = st.date_input('Start' , value=pd.to_datetime('2019-08-18'))
     end = st.date_input('End' , value=pd.to_datetime('today'))
     
     st.title('Predicción de tendencia de acciones')
