@@ -9,4 +9,4 @@ scikit-learn
 plotly
 stockai==1.5.0
 statsmodels==0.12.2
-keras
+keras==2.9.0
