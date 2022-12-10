@@ -83,9 +83,8 @@ def app():
 
     st.pyplot(fig)
     st.write('Por lo tanto, considerando un p,d, q = 1,1,2 observamos que el modelo ARIMA genera adecuadas predicciones en el precio de valores para esta data.')
-    st.subheader('Gráfico del diagnóstico general aplicando el modelo ARIMA')
     
-    
+    #st.subheader('Gráfico del diagnóstico general aplicando el modelo ARIMA')
     #figura2 = model.plot_diagnostics(figsize=(15,8))
     #st.pyplot(figura2)
 
