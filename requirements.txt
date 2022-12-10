@@ -8,4 +8,4 @@ pandas_datareader==0.10.0
 scikit-learn
 plotly
 stockai==1.5.0
-statsmodels.api
+statsmodels==1.15.0
