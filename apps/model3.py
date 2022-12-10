@@ -202,7 +202,7 @@ def app():
     st.write('.: Result Root Mean Square Error (RMSE) Prediction Model :',rmse(datatest, datapred))
     st.write('.: Result Mean Absolute Percentage Error (MAPE) Prediction Model : ', mape(datatest, datapred), '%')
     
-    st.header("Grafico con los datos de prueba y los resultado de predicción")
+    st.header("Gráfico con los datos de prueba y los resultado de predicción")
     fig7=plt.figure(num=None, figsize=(10, 4), dpi=80,facecolor='w', edgecolor='k')
     plt.title('Gráfico de comparación de la Data Actual y la Data Predicha')
     plt.plot(datacompare['Data Test'], color='red',label='Data Test',linewidth=2)
