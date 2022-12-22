@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import pandas_datareader as datas
+from pandas_datareader import data as pdr
+import yfinance as yf
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVR 
 from sklearn import metrics
@@ -23,7 +24,11 @@ def app():
 
     user_input = st.text_input('Introducir cotización bursátil' , 'NTDOY')
 
-    df = datas.DataReader(user_input, 'yahoo', start, end)
+    lista = [user_input]
+
+    y_symbols = ['SCHAND.NS', 'TATAPOWER.NS', 'ITC.NS']
+
+    df = pdr.get_data_yahoo([user_input], start,end)
     
     # Describiendo los datos
     st.subheader('Tabla de datos') 
